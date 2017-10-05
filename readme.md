@@ -5,7 +5,7 @@
 This library provides an easy way to interact with the [Rungopher SimpleSms API](https://www.rungopher.com/simple.html).
 
 ## Installation
-The suggested installation method is via [composer](https://getcomposer.org/):
+Distributed via [packagist](https://packagist.org/packages/rungopher/simplesms). The suggested installation method is via [composer](https://getcomposer.org/):
 
 ``` shell
 composer require "rungopher/simplesms:~1.0.0"
