@@ -1,11 +1,10 @@
-#Rungopher SimpleSMS PHP Library
-
+# Rungopher SimpleSMS PHP Library
 
 ![Rungopher](https://www.rungopher.com/images/logo.png)
 
 This library provides an easy way to interact with the [Rungopher SimpleSms API](https://www.rungopher.com/simple.html).
 
-##Installation
+## Installation
 The suggested installation method is via [composer](https://getcomposer.org/):
 
 ``` shell
@@ -13,8 +12,8 @@ composer require "rungopher/simplesms:~1.0.0"
 ```
 
 
-##Usage
-###Sending an SMS:
+## Usage
+### Sending an SMS:
 
 *Note: This example uses cURL which requires the [cURL PHP Extension](http://php.net/manual/en/book.curl.php). To use a custom requester see* ***Using a Custom Requester*** *below.*
 
@@ -46,7 +45,7 @@ try {
 	
 	
 	
-###Receiving a Delivery Receipt:
+### Receiving a Delivery Receipt:
 ``` php
 use Rungopher\SimpleSms\Messages\SimpleSmsDeliveryReceipt;
 
@@ -64,7 +63,7 @@ $deliveryReceipt = SimpleSmsDeliveryReceipt::fromRequestBody($requestBody);
 | failed()        | NA             |
 
 
-###Receiving an Inbound SMS:
+### Receiving an Inbound SMS:
 ``` php
 use Rungopher\SimpleSms\Messages\SimpleSmsInbound;
 
@@ -82,12 +81,12 @@ $inboundSms = SimpleSmsInbound::fromRequestBody($requestBody);
 | getMessageSid() | MessageSid     |
 
 
-##Using a Custom Requester##
+## Using a Custom Requester
 A custom requester must implement `RequesterInterface`:
 
 ``` php
 /**
-Return: SimpleSmsResponse
+returns: SimpleSmsResponse
 */
 public function new(SimpleSmsRequest $request);
 ```
