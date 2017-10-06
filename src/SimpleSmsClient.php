@@ -31,7 +31,7 @@ class SimpleSmsClient {
 		$response = $this->requester->new($this->request);
 
 		if ($response->getStatusCode() >= 400) {
-        	throw new SimpleSmsErrorException($result);
+        	throw new SimpleSmsErrorException($response->getResponse());
         }
 
 		return SimpleSmsOutbound::fromJson($response->getResponse());  
