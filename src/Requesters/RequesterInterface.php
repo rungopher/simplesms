@@ -3,5 +3,5 @@
 use Rungopher\SimpleSms\SimpleSmsRequest;
 
 interface RequesterInterface {
-	public function new(SimpleSmsRequest $request);
+	public function newRequest(SimpleSmsRequest $request);
 }

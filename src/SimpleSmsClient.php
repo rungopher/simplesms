@@ -28,7 +28,7 @@ class SimpleSmsClient {
 	public function sendSms($to, $message) {
 		$this->request->setBody($this->sender, $to, $message);
 		
-		$response = $this->requester->new($this->request);
+		$response = $this->requester->newRequest($this->request);
 
 		if ($response->getStatusCode() >= 400) {
         	throw new SimpleSmsErrorException($response->getResponse());

@@ -13,7 +13,7 @@ class CurlRequester implements RequesterInterface {
 		$this->curl = curl_init();
 	}
 
-	public function new(SimpleSmsRequest $request) {
+	public function newRequest(SimpleSmsRequest $request) {
 
 		curl_setopt_array($this->curl, array(
     		CURLOPT_RETURNTRANSFER => 1,
