@@ -88,7 +88,7 @@ A custom requester must implement `RequesterInterface`:
 /**
 returns: SimpleSmsResponse
 */
-public function new(SimpleSmsRequest $request);
+public function newRequest(SimpleSmsRequest $request);
 ```
 
 **SimpleSmsRequest:**
