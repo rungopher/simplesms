@@ -21,14 +21,15 @@ class CurlRequester implements RequesterInterface {
 			CURLOPT_PORT => $request->getPort(),
 			CURLOPT_USERPWD => "{$request->getUsername()}:{$request->getPassword()}",
 			CURLOPT_POST => 1,
-			CURLOPT_POSTFIELDS => $request->getBody()
+			CURLOPT_POSTFIELDS => $request->getBody(),
+			CURLOPT_SSL_VERIFYPEER => FALSE
 		));
 
 		$response = curl_exec($this->curl);
 		if (curl_errno($this->curl)) {
 			throw new SimpleSmsErrorException("Couldn't send request: " . curl_error($this->curl));
 		}
-		
+
 		$statusCode = curl_getinfo($this->curl, CURLINFO_HTTP_CODE);
 		curl_close($this->curl);
 
