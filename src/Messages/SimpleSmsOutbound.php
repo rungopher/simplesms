@@ -8,12 +8,15 @@ class SimpleSmsOutbound {
 	private $messageSid;
 	private $status;
 
-	public function __construct($from, $to, $body, $messageSid, $status) {
+	private $rawResponse;
+
+	public function __construct($from, $to, $body, $messageSid, $status, $rawResponse = "") {
 		$this->from = $from;
 		$this->to = $to;
 		$this->body = $body;
 		$this->messageSid = $messageSid;
 		$this->status = $status;
+		$this->rawResponse = $rawResponse;
 	}
 
 	public function getFrom() {
@@ -36,9 +39,13 @@ class SimpleSmsOutbound {
 		return $this->status;
 	}
 
+	public function getRawResponse() {
+		return $this->rawResponse;
+	}
+
 	public static function fromJson($json) {
 		$data = json_decode($json);
 
-		return new static($data->from, $data->to, $data->body, $data->sid, $data->status);
+		return new static($data->from, $data->to, $data->body, $data->sid, $data->status, $json);
 	}
 }
